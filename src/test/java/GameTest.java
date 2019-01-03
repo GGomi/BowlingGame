@@ -18,7 +18,7 @@ public class GameTest {
         game.roll(0);
     }
 
-    private void rollMany(int pins, int frames) {
+    private void rollMany(int frames, int pins) {
         for (int i = 0; i < frames; i++) {
             game.roll(pins);
         }
@@ -27,6 +27,10 @@ public class GameTest {
     private void rollSpare() {
         game.roll(5);
         game.roll(5);
+    }
+
+    private void rollStrike() {
+        game.roll(10);
     }
 
     @Test
@@ -48,4 +52,14 @@ public class GameTest {
         rollMany(17,0);
         assertThat(game.getScore(),is(16));
     }
+
+    @Test
+    public void oneStrikes() {
+        rollStrike();
+        game.roll(5);
+        game.roll(3);
+        rollMany(16,0);
+        assertThat(game.getScore(),is(26));
+    }
+
 }
