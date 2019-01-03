@@ -1,5 +1,7 @@
 # Bowling Game
 
+[Go to README(EN)](https://github.com/GGomi/BowlingGame/blob/master/README(EN).md)
+
 ## Summary
 TDD연습을 위한 Bowling Game 프로젝트입니다.
 
